@@ -26,10 +26,15 @@ export const useFetch = (url) => {
         return () => { console.log("desmonta"); };
     }, [url]);
 
-
     return {
-        data: state.data,
-    isLoading: state.isLoading
+        //* Esta es una manera de Retornar solo lo que se va a necesitar
+        //* de esta manera no es necesario desestructurar
+        //     data: state.data,
+        // isLoading: state.isLoading
+        //* Esta manera Retorno el objeto completo, porlo que en mi componente debo 
+        //* desestructurar para utilizarlo
+        state,
+        setState
     }
 }
 
