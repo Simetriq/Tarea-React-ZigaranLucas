@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useCounter } from "../hooks/useCounter";
 import { Navbar } from "../components/Navbar";
 
-export const Home = () => {
+export const HomePage = () => {
   const [state, setState] = useState({
     data: null,
     isLoading: true,

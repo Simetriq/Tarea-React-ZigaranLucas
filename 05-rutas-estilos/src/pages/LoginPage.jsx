@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { useForm } from "../hooks/useForm";
 
-export const Login = ({ onLogin }) => {
+export const LoginPage = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const { formState, handleChange, handleReset } = useForm({
