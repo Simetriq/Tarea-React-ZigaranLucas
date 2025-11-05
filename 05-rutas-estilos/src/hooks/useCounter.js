@@ -10,7 +10,7 @@ export const useCounter = (initialValue) => {
   const handleDecrement = (number) => {
     const resta = count - number;
 
-    if (resta < 0) return;
+    if (resta < 0) return
 
     setCount(count - number);
   };
