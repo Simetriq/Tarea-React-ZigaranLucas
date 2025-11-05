@@ -6,6 +6,7 @@ export const App = () => {
 
   const handleLogin = (username) => {
     setUser(username);
+    localStorage.setItem("isLogged", "true");
   };
 
   return (

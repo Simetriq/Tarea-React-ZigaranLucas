@@ -1,14 +1,22 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   return (
-    <nav className="bg-blue-200 p-2 text-dark w-full flex justify-between">
+    <nav className="">
       <Link to="/home" className="mr-4 hover:text-blue-800">
         Home
       </Link>
-      <Link to="/about" className="mr-4">
+      <button
+        className="mr-4"
+        onClick={() => {
+          console.log("object")
+          localStorage.removeItem("isLogged");
+          navigate("/login");
+        }}
+      >
         Logout
-      </Link>
+      </button>
     </nav>
   );
 };

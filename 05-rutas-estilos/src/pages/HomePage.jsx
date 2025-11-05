@@ -16,6 +16,10 @@ export const HomePage = () => {
   useEffect(() => {
     // ... mismo código de las estrellas
   }, []);
+  const handleDeleted = () => {
+    localStorage.removeItem("isLogged");
+    console.log("object")
+  };
 
   return (
     <div className="space-app">
@@ -58,6 +62,10 @@ export const HomePage = () => {
           >
             Siguiente →
           </button>
+
+        </div>
+        <div>
+          <button onClick={() => handleDeleted()}>Eliminar localStorage</button>
         </div>
       </div>
     </div>

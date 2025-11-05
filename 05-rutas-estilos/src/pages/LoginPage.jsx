@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
 import { useForm } from "../hooks/useForm";
 
-export const LoginPage = ({ onLogin }) => {
+export const LoginPage = () => {
   const navigate = useNavigate();
 
-  const { formState, handleChange, handleReset } = useForm({
+  const { formState, handleChange } = useForm({
     username: "",
     password: "",
   });
@@ -12,7 +12,7 @@ export const LoginPage = ({ onLogin }) => {
   useForm;
   const { username, password } = formState;
 
-  const handleSubmit = (event, onLogin) => {
+  const handleSubmit = (event) => {
     // prevenir que se reincie el formulario
     event.preventDefault();
 
@@ -29,25 +29,31 @@ export const LoginPage = ({ onLogin }) => {
     navigate("/home");
   };
 
+
+
+
   return (
-    <form onSubmit={(event) => handleSubmit(event, onLogin)}>
-      <input
-        type="text"
-        name="username"
-        placeholder="username"
-        value={username}
-        onChange={handleChange}
-      />
+    <div>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          value={username}
+          onChange={handleChange}
+        />
 
-      <input
-        type="text"
-        name="password"
-        placeholder="password"
-        value={password}
-        onChange={handleChange}
-      />
+        <input
+          type="text"
+          name="password"
+          placeholder="password"
+          value={password}
+          onChange={handleChange}
+        />
 
-      <button>Iniciar Sesion</button>
-    </form>
+        <button>Iniciar Sesion</button>
+      </form>
+    
+    </div>
   );
 };
