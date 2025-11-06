@@ -12,9 +12,9 @@ export const HomePage = () => {
   const { data, isLoading } = useFetch(url);
   const URLimage = `https://cdn.thesimpsonsapi.com/500/character/${count}.webp`;
 
-  // Efecto para crear las estrellas (igual)
+  
   useEffect(() => {
-    // ... mismo código de las estrellas
+  
   }, []);
   const handleDeleted = () => {
     localStorage.removeItem("isLogged");
@@ -23,18 +23,18 @@ export const HomePage = () => {
 
   return (
     <div className="space-app">
-      {/* Fondo espacial (igual) */}
+      
       <div className="space-container">
         <div className="stars" id="stars"></div>
         <div className="planet"></div>
       </div>
 
-      {/* Contenido principal */}
+    
       <div className="app-content">
         <h1 className="app-title">Los Simpson API</h1>
         <h2 className="app-subtitle">Explora el Universo de Los Simpson</h2>
 
-        {/* Card del personaje - AHORA COMPONENTIZADO */}
+        
         <div className="character-card">
           {isLoading ? (
             <Loading />
@@ -43,7 +43,7 @@ export const HomePage = () => {
           )}
         </div>
 
-        {/* Controles de navegación (igual) */}
+        
         <div className="navigation-controls">
           <button
             onClick={() => handleDecrement(1)}
